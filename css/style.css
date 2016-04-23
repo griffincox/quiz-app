@@ -1,0 +1,43 @@
+body {
+  background-color: black;
+}
+.container {
+  background-color: white;
+  width: 600px;
+  height: 600px;
+  margin: 50px auto;
+  border-radius: 25px;
+}
+.instructions {
+  height: 70px;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  text-align: center;
+  border-bottom: 2px solid black;
+}
+.question {
+  height: 60px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  text-align: center;
+  border-bottom: 2px solid black;
+}
+.answers {
+  height: 170px;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  text-align: center;
+  border-bottom: 2px solid black;
+}
+ul {
+  list-style: none;
+}
+li {
+  padding-top: 10px;
+}
+.score {
+  height: 60px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  text-align: center;
+}
