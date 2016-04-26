@@ -3,7 +3,7 @@ var score = 0;
 var questionnum = 1;
 var question = [
   "What year was Alpha Delta Phi founded?",
-  "What is the name of our illustrious founder?",
+  "What is the first name of our illustrious founder?",
   "What year was our chapter house built?",
   "How many chapters do we have internationally?",
   "Fill in the blank: ____ Troll"
@@ -14,11 +14,11 @@ var answer = [
   "1832",
   "1834",
   "1832",
-  "Samuel Eels",
-  "Samuel Eldrick",
-  "Richard Eels",
-  "Richard Eldrick",
-  "Samuel Eels",
+  "Samuel",
+  "Rodrick",
+  "Tyrion",
+  "Richard",
+  "Samuel",
   "1920",
   "1925",
   "1926",
