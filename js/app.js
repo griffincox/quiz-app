@@ -47,75 +47,66 @@ $(document).ready(function() {
     // functionality
     if (questionnum == 1 && selection == answer[4]) {
       score++;
-      $("#s-number").text("Your Score is: " + score + "/5");
       makeQuestion(question, 1);
-      $("#a-list").empty();
       $(".answers").append(makeAnswers(answer, 5, 8));
       questionnum = 2;
     }
     else if (questionnum == 1 && selection != answer[4]) {
       makeQuestion(question, 1);
-      $("#a-list").empty();
       $(".answers").append(makeAnswers(answer, 5, 8));
       questionnum = 2;
     }
     else if (questionnum == 2 && selection == answer[9]) {
       score++;
-      $("#a-list").empty();
-      $("#s-number").text("Your Score is: " + score + "/5");
+
       makeQuestion(question, 2);
-      $("#a-list").empty();
       $(".answers").append(makeAnswers(answer, 10, 13));
       questionnum = 3;
     }
     else if (questionnum == 2 && selection != answer[9]) {
       makeQuestion(question, 2);
-      $("#a-list").empty();
       $(".answers").append(makeAnswers(answer, 10, 13));
       questionnum = 3;
     }
     else if (questionnum == 3 && selection == answer[14]) {
       score++;
-      $("#a-list").empty();
-      $("#s-number").text("Your Score is: " + score + "/5");
+
       makeQuestion(question, 3);
-      $("#a-list").empty();
       $(".answers").append(makeAnswers(answer, 15, 18));
       questionnum = 4;
     }
     else if (questionnum == 3 && selection != answer[14]) {
       makeQuestion(question, 3);
-      $("#a-list").empty();
       $(".answers").append(makeAnswers(answer, 15, 18));
       questionnum = 4;
     }
     else if (questionnum == 4 && selection == answer[19]) {
       score++;
-      $("#a-list").empty();
-      $("#s-number").text("Your Score is: " + score + "/5");
+
       makeQuestion(question, 4);
-      $("#a-list").empty();
       $(".answers").append(makeAnswers(answer, 20, 23));
       questionnum = 5;
     }
     else if (questionnum == 4 && selection != answer[19]) {
       makeQuestion(question, 4);
-      $("#a-list").empty();
       $(".answers").append(makeAnswers(answer, 20, 23));
       questionnum = 5;
     }
     else if (questionnum == 5 && selection == answer[24]) {
       score++;
-      $("#s-number").text("Your Score is: " + score + "/5");
+
       if (score == 5) {
+        $("#s-number").text("Your Score is: " + score + "/5");
         alert("You got 5/5!");
       }
       else {
-        alert("You missed at least one! Try again by pressing new game.");
+        $("#s-number").text("Your Score is: " + score + "/5");
+        alert("You got " + score + "/5! Press new game to try again");
       }
     }
     else {
-      alert("You missed at least one! Try again by pressing new game.");
+      $("#s-number").text("Your Score is: " + score + "/5");
+      alert("You got " + score + "/5! Press new game to try again");
     }
   });
 });
@@ -128,6 +119,7 @@ function newQuiz() {
   $("#s-number").text("Your Score is: " + score + "/5");
 }
 function makeAnswers(array, lowerindex, upperindex) {
+  $("#a-list").empty();
   var myNode = document.getElementById("a-list");
   // Populate the ul with answers
   for(var i = lowerindex; i <= upperindex; i++) {
@@ -142,4 +134,5 @@ function makeAnswers(array, lowerindex, upperindex) {
 }
 function makeQuestion(array, index) {
   $("#q-text").text(array[index]);
+  $("#s-number").text("Your Score is: " + score + "/5");
 }
