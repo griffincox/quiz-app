@@ -44,6 +44,7 @@ function newQuiz() {
   $("#q-text").text(quiz[0]);
   $(".answers").append(makeUL(a1));
   score = 0;
+  $("#s-number").text("Your Score is: " + score + "/5");
 }
 // bind handler to ul
 // populate ul with li answers
