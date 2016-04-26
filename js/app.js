@@ -1,50 +1,50 @@
+var selection = null;
 var quiz = [
+  0,
   "What year was Alpha Delta Phi founded?",
-  "What is the name of our illustrious founder?",
-  "What year was our chapter house built?",
-  "How many chapters do we have internationally?",
-  "Fill in the blank: ____ Troll"
-];
-var a1 = [
   "1820",
   "1830",
   "1832",
-  "1834"
-];
-var a2 = [
+  "1834",
+  "1832",
+  "What is the name of our illustrious founder?",
   "Samuel Eels",
   "Samuel Eldrick",
   "Richard Eels",
-  "Richard Eldrick"
-];
-var a3 = [
+  "Richard Eldrick",
+  "Samuel Eels",
+  "What year was our chapter house built?",
   "1920",
   "1925",
   "1926",
-  "1930"
-];
-var a4 = [
+  "1930",
+  "1926",
+  "How many chapters do we have internationally?",
   "25",
   "26",
   "30",
-  "33"
-];
-var a5 = [
+  "33",
+  "33",
+  "Fill in the blank: ____ Troll",
   "Big",
   "Small",
   "Come",
-  "There"
+  "There",
+  "Come",
 ];
-var score = 0;
 $(document).ready(function() {
   newQuiz();
+  $("#a-list").on("click", "li", function(event){
+    console.log("User selected " + $(event.target).text());
+    selection = $(event.target).text();
+  });
 });
 function newQuiz() {
 	console.log("called newQuiz");
-  $("#q-text").text(quiz[0]);
-  $(".answers").append(makeUL(a1));
-  score = 0;
-  $("#s-number").text("Your Score is: " + score + "/5");
+  $("#q-text").text(quiz[1]);
+  $(".answers").append(makeAnswers(quiz, 2, 5));
+  quiz[0] = 0;
+  $("#s-number").text("Your Score is: " + quiz[0] + "/5");
 }
 // bind handler to ul
 // populate ul with li answers
@@ -56,18 +56,22 @@ function newQuiz() {
 // when all 5 questions are answered, display congratulations if 5/5 or else press "new game" to try against
 
 $("#newgame").click(function() {
+  document.getElementById("a-list").empty();
   newQuiz();
 });
-function makeUL(array) {
-  // Create the list element:
+function makeAnswers(array, lowerindex, upperindex) {
+  var myNode = document.getElementById("a-list");
   var list = document.createElement('ul');
-  for(var i = 0; i < array.length; i++) {
+  // Populate the ul with answers
+  for(var i = lowerindex; i <= upperindex; i++) {
     // Create the list item:
     var item = document.createElement('li');
     // Set its contents
     item.appendChild(document.createTextNode(array[i]));
     // Add it to the list:
     list.appendChild(item);
+    // Append list to ul
+    myNode.appendChild(list);
   }
-  return list;
+  return myNode;
 }
