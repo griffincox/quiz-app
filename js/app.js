@@ -68,6 +68,6 @@ function makeUL(array) {
     item.appendChild(document.createTextNode(array[i]));
     // Add it to the list:
     list.appendChild(item);
-    return list;
   }
+  return list;
 }
